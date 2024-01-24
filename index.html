@@ -1,1 +1,242 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>Chaintail.XYZ | Blockchain Advisory</title>
+  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+/*             background-color: #EEEEEE; */
+            background-color: #333333;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 100vh;
+            /* 40px for body margins, 120px for max text_logo height */
+            font-family: 'Inter', sans-serif;
+        }
+
+        .content-container {
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            /* display: flex; */
+            flex: 1 1;
+            width: 100%;
+            height: 100%;
+            margin: 20px;
+        }
+
+
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img.icon-logo {
+            max-width: 20vw;
+            max-height: 20vh;
+            width: auto;
+            height: auto;
+            max-width: 369px;
+            animation: fadeIn 10s;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .loading-bar {
+            width: 120%;
+            max-width: 420px;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            animation: fadeIn 2s 2s forwards;
+            opacity: 0;
+            /* delay of 8s to start after icon_logo */
+        }
+
+        .loading-bar-inner {
+            width: 69%;
+            height: 100%;
+            background: linear-gradient(-45deg, #888 25%, transparent 25%, transparent 50%, #888 50%, #888 75%, transparent 75%, transparent);
+            background-size: 56.57px 56.57px;
+            /* sqrt(2) * 40px */
+            animation: swirl 2s linear infinite;
+        }
+
+        @keyframes swirl {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 56.57px 56.57px;
+            }
+        }
+
+        img.text-logo {
+            max-width: 120px;
+            width: 100%;
+            align-self: flex-end;
+            padding: 40px;
+        }
+
+
+
+
+        @keyframes flash {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        
+        p.loading-text {
+            color: #030090;
+            font-weight: bold;
+            margin: 0;
+            opacity: 0;
+            animation: flashText 1.5s infinite alternate;
+            animation-delay: 6s;
+            /* Wait for both icon_logo and loading bar to appear */
+        }
+
+        @keyframes flashText {
+            from {
+                opacity: 0.3;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        span.dot {
+            opacity: 0;
+            animation: flashDot 3s infinite;
+        }
+
+        span.dot:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        span.dot:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        @keyframes flashDot {
+
+            0%,
+            96% {
+                opacity: 0.01;
+            }
+
+            12.5%,
+            96.1% {
+                opacity: 1;
+            }
+
+            96.2%,
+            99% {
+                opacity: 0.01;
+            }
+
+            100% {
+                opacity: 0.0;
+            }
+        }
+
+        .spacer {
+            flex: 1 1;
+            width: 20px;
+            /* background-color: aqua; */
+        }
+
+        .bottom-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            width: 100%;
+            /* padding: 20px; */
+        }
+
+
+
+        @media (max-width: 768px) {
+            img.text-logo {
+                max-width: 100px;
+                align-self: center;
+                padding: 20px;
+
+            }
+
+
+            img.icon-logo {
+                max-width: 169px;
+            }
+
+            .loading-bar {
+                min-width: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="content-container"> -->
+    <div class="spacer"></div>
+    <div class="center-container">
+        <img src="img/icon_logo.svg" alt="Icon logo" class="icon-logo"
+            onerror="this.onerror=null; this.src='icon_logo.png';">
+        <div class="loading-bar">
+            <div class="loading-bar-inner"></div>
+        </div>
+        <p class="loading-text text-fadein">Coming soon<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+        </p>
+    </div>
+    <div class="spacer"></div>
+    <div class="bottom-image-container">
+
+        <img src="img/text_logo.svg" alt="Text logo" class="text-logo"
+            onerror="this.onerror=null; this.src='text_logo.png';">
+    </div>
+    <!-- </div> -->
+</body>
+
+</html>hello world
